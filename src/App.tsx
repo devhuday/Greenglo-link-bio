@@ -6,9 +6,11 @@ import { SocialLinks } from "./components/SocialLinks";
 import { Stats } from "./components/Stats";
 import { Gallery } from "./components/Gallery";
 import { ActionLinks } from "./components/ActionLinks";
+import { QuoteModal } from "./components/QuoteModal";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [showQuote, setShowQuote] = useState(false);
   const { isDark, toggle } = useTheme();
   const tk = themeTokens(isDark);
 
@@ -28,7 +30,7 @@ function App() {
         <SocialLinks loaded={loaded} tk={tk} />
         <Stats loaded={loaded} tk={tk} />
         <Gallery loaded={loaded} tk={tk} />
-        <ActionLinks loaded={loaded} tk={tk} />
+        <ActionLinks loaded={loaded} tk={tk} onQuoteClick={() => setShowQuote(true)} />
 
         {/* Footer */}
         <div
@@ -40,6 +42,8 @@ function App() {
           </p>
         </div>
       </div>
+
+      <QuoteModal isOpen={showQuote} onClose={() => setShowQuote(false)} tk={tk} />
     </div>
   );
 }

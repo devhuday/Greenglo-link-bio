@@ -56,7 +56,8 @@ export function themeTokens(isDark: boolean) {
   return isDark
     ? {
         page:          'bg-gray-950',
-        heroGradient:  'gray-950',
+        heroGradient:  'from-gray-950',
+        logoUrl: 'https://luereyyaepjejecuttgb.supabase.co/storage/v1/object/public/Landing-Photos/LogoGreenglo2.webp',
         card:          'bg-gray-900/70 border-gray-800',
         cardSolid:     'bg-gray-900 border-gray-800',
         tabContainer:  'bg-gray-900/80 border-gray-800',
@@ -78,10 +79,13 @@ export function themeTokens(isDark: boolean) {
         ambientGlow:   'bg-green-500/5',
         text: "text-slate-200",
         gridOpacity:   'opacity-40',
+        inputField:    'bg-gray-800 border-gray-700 placeholder:text-gray-500',
+        modalOverlay:  'bg-gray-950/90',
       }
     : {
         page:          'bg-slate-100',
-        heroGradient:  'slate-100',
+        heroGradient:  'to-slate-100',
+        logoUrl: 'https://luereyyaepjejecuttgb.supabase.co/storage/v1/object/public/Landing-Photos/LogoGreenglo_1.webp',
         card:          'bg-white border-slate-200',
         cardSolid:     'bg-white border-slate-200',
         tabContainer:  'bg-white border-slate-200',
@@ -103,5 +107,7 @@ export function themeTokens(isDark: boolean) {
         ambientGlow:   'bg-green-400/1',
         text: "text-slate-600",
         gridOpacity:   'opacity-20',
+        inputField:    'bg-white border-slate-200 placeholder:text-slate-400',
+        modalOverlay:  'bg-slate-900/70',
       };
 }

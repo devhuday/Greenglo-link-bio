@@ -13,14 +13,14 @@ export function Hero({ loaded, isDark, toggle, tk }: Props) {
     <div className="relative rounded-3xl overflow-hidden mb-7">
       {/* Imagen de fondo */}
       <img
-        src="https://luereyyaepjejecuttgb.supabase.co/storage/v1/object/public/Landing-Photos/20240319_101301.webp"
+        src="https://luereyyaepjejecuttgb.supabase.co/storage/v1/object/public/Landing-Photos/worker_greenglo.webp"
         alt="Paneles solares GreenGlo"
         className="w-full h-80 object-cover object-center"
       />
 
       {/* Gradiente: imagen arriba → color del tema abajo */}
-      <div className={`absolute inset-0 bg-linear-to-t from-${tk.heroGradient} via-white/10 to-transparent`} />
-      <div className={`absolute inset-0 bg-linear-to-b from-white/5 via-transparent to-${tk.heroGradient}`} />
+      <div className={`absolute inset-0 bg-linear-to-t ${tk.heroGradient} via-white/10 to-transparent`} />
+      <div className={`absolute inset-0 bg-linear-to-b from-white/5 via-transparent ${tk.heroGradient}`} />
 
       {/* Botón toggle oscuro / claro */}
       <div className="absolute top-4 left-4">
@@ -47,9 +47,9 @@ export function Hero({ loaded, isDark, toggle, tk }: Props) {
         style={{ transitionDelay: "80ms" }}
       >
         <img
-          src="https://luereyyaepjejecuttgb.supabase.co/storage/v1/object/public/Landing-Photos/LogoGreenglo2.webp"
+          src={`${tk.logoUrl}`}
           alt="GreenGlo"
-          className="w-52 object-contain mb-2 drop-shadow-lg"
+          className="w-72 object-contain mb-2 drop-shadow-2xl"
         />
         <p className={`${tk.text} text-sm leading-relaxed text-center max-w-xs`}>
           Instalamos sistemas solares para hogares y empresas en Colombia 🇨🇴

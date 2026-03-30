@@ -5,9 +5,10 @@ import type { Tokens } from "../utils/useTheme";
 interface Props {
   loaded: boolean;
   tk: Tokens;
+  onQuoteClick: () => void;
 }
 
-export function ActionLinks({ loaded, tk }: Props) {
+export function ActionLinks({ loaded, tk, onQuoteClick }: Props) {
   return (
     <div
       className={`fade-up ${loaded ? "loaded" : ""} mb-4`}
@@ -29,45 +30,49 @@ export function ActionLinks({ loaded, tk }: Props) {
             className="fade-up loaded"
             style={{ transitionDelay: `${420 + i * 60}ms` }}
           >
-            <a
-              href={link.href}
-              className={`link-card block relative overflow-hidden rounded-2xl border ${
-                link.featured
-                  ? "border-green-500/30 bg-gradient-to-r " + link.accent
-                  : tk.linkNormal
-              } transition-all duration-200`}
-            >
-              {link.featured && (
+            {link.featured ? (
+              <button
+                type="button"
+                onClick={onQuoteClick}
+                className={`link-card w-full text-left relative overflow-hidden rounded-2xl border border-green-500/30 bg-gradient-to-r ${link.accent} transition-all duration-200`}
+              >
                 <div className="shimmer absolute inset-0 pointer-events-none" />
-              )}
-              <div className="flex items-center gap-3.5 px-4 py-3.5">
-                {/* Ícono */}
-                <div
-                  className={`flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center ${
-                    link.featured ? "bg-white/20 text-white" : tk.linkIconBg
-                  }`}
-                >
-                  {link.icon}
-                </div>
-
-                {/* Texto */}
-                <div className="flex-1 min-w-0">
-                  <div className={`font-medium text-sm ${link.featured ? "text-white" : tk.linkText}`}>
-                    {link.label}
+                <div className="flex items-center gap-3.5 px-4 py-3.5">
+                  <div className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center bg-white/20 text-white">
+                    {link.icon}
                   </div>
-                  {link.sublabel && (
-                    <div className={`text-xs mt-0.5 ${link.featured ? "text-white/65" : tk.linkSubtext}`}>
-                      {link.sublabel}
-                    </div>
-                  )}
+                  <div className="flex-1 min-w-0">
+                    <div className="font-medium text-sm text-white">{link.label}</div>
+                    {link.sublabel && (
+                      <div className="text-xs mt-0.5 text-white/65">{link.sublabel}</div>
+                    )}
+                  </div>
+                  <div className="flex-shrink-0 text-white/70">
+                    <ChevronRight />
+                  </div>
                 </div>
-
-                {/* Flecha */}
-                <div className={`flex-shrink-0 ${link.featured ? "text-white/70" : tk.textMuted}`}>
-                  <ChevronRight />
+              </button>
+            ) : (
+              <a
+                href={link.href}
+                className={`link-card block relative overflow-hidden rounded-2xl border ${tk.linkNormal} transition-all duration-200`}
+              >
+                <div className="flex items-center gap-3.5 px-4 py-3.5">
+                  <div className={`flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center ${tk.linkIconBg}`}>
+                    {link.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className={`font-medium text-sm ${tk.linkText}`}>{link.label}</div>
+                    {link.sublabel && (
+                      <div className={`text-xs mt-0.5 ${tk.linkSubtext}`}>{link.sublabel}</div>
+                    )}
+                  </div>
+                  <div className={`flex-shrink-0 ${tk.textMuted}`}>
+                    <ChevronRight />
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            )}
           </div>
         ))}
       </div>

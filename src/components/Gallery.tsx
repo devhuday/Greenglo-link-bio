@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { gallery, CATEGORIES, categoryEmoji, type Category } from "../data/pageData";
+import { gallery, CATEGORIES, type Category } from "../data/pageData";
 import { ZoomIcon } from "./icons";
 import type { Tokens } from "../utils/useTheme";
 
@@ -39,9 +39,9 @@ export function Gallery({ loaded, tk }: Props) {
                   : tk.tabInactive
               }`}
             >
-              <span>{categoryEmoji[cat]}</span>
+              
               <span className="hidden sm:inline">{cat}</span>
-              <span className="sm:hidden">{cat.slice(0, 5)}</span>
+              <span className="sm:hidden">{cat.slice(0, 11)}</span>
             </button>
           ))}
         </div>
