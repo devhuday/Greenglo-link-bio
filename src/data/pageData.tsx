@@ -3,7 +3,7 @@
    Edita aquí para cambiar textos, URLs, imágenes y links.
 ───────────────────────────────────────────────────────────────────── */
 import {
-  SunIcon, PhoneIcon, MapIcon, CalendarIcon, WhatsAppIcon,
+  SunIcon, WhatsAppIcon,
   FacebookIcon, InstagramIcon, YoutubeIcon, GlobeIcon,
 } from "../components/icons";
 
