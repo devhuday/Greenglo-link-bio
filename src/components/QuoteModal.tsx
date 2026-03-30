@@ -5,9 +5,9 @@ import type { Tokens } from "../utils/useTheme";
 // ─── Credenciales de EmailJS ────────────────────────────────────────────────
 // Regístrate gratis en https://www.emailjs.com/ y reemplaza estos valores,
 // o defínelos en un archivo .env como VITE_EMAILJS_SERVICE_ID, etc.
-const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  ?? "service_ywxczys";
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "template_wv6d8vr";
-const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  ?? "frAzwmQcoW0i3P7RX";
+const SERVICE_ID  = "service_ywxczys";
+const TEMPLATE_ID = "template_wv6d8vr";
+const PUBLIC_KEY  = "JjE5LDOZWo5y77Mty";
 // ────────────────────────────────────────────────────────────────────────────
 
 interface Props {
@@ -36,13 +36,13 @@ export function QuoteModal({ isOpen, onClose, tk }: Props) {
         SERVICE_ID,
         TEMPLATE_ID,
         {
-          to_email:  "ingeniero2@greenglo.com.co",
           nombre:    form.nombre,
           telefono:  form.telefono,
           correo:    form.correo || "No proporcionado",
           nic:       form.nic,
           tipo:      form.tipo,
           mensaje:   form.mensaje || "Sin mensaje adicional",
+          to_email:  "ingeniero2@greenglo.com.co",
         },
         PUBLIC_KEY
       );
@@ -52,7 +52,8 @@ export function QuoteModal({ isOpen, onClose, tk }: Props) {
         setStatus("idle");
         setForm(INITIAL);
       }, 2800);
-    } catch {
+    } catch (err) {
+      console.error("Error completo de Email", err);
       setStatus("error");
     }
   };
