@@ -4,7 +4,7 @@
 ───────────────────────────────────────────────────────────────────── */
 import {
   SunIcon, WhatsAppIcon,
-  FacebookIcon, InstagramIcon, YoutubeIcon, GlobeIcon,
+  FacebookIcon, InstagramIcon, GlobeIcon,
 } from "../components/icons";
 
 /* ── Links de acción ──────────────────────────────────────────────── */
@@ -24,35 +24,28 @@ export const links = [
 export const socials = [
   {
     icon: <FacebookIcon />,
-    href: "#",
+    href: "https://www.facebook.com/greenglosas/",
     label: "Facebook",
     color: "text-[#1877F2]",
     ring: "hover:border-[#1877F2]/40 hover:bg-[#1877F2]/10",
   },
   {
     icon: <InstagramIcon />,
-    href: "#",
+    href: "https://www.instagram.com/greenglosas/",
     label: "Instagram",
     color: "text-[#C13584]",
     ring: "hover:border-[#C13584]/40 hover:bg-[#C13584]/10",
   },
   {
-    icon: <YoutubeIcon />,
-    href: "#",
-    label: "YouTube",
-    color: "text-[#FF0000]",
-    ring: "hover:border-[#FF0000]/40 hover:bg-[#FF0000]/10",
-  },
-  {
     icon: <WhatsAppIcon />,
-    href: "#",
+    href: "https://wa.me/573001234567",
     label: "WhatsApp",
     color: "text-[#25D366]",
     ring: "hover:border-[#25D366]/40 hover:bg-[#25D366]/10",
   },
   {
     icon: <GlobeIcon />,
-    href: "#", // 👈 reemplaza con la URL de tu sitio web
+    href: "https://cotiza.greenglo.com.co", // 👈 reemplaza con la URL de tu sitio web
     label: "Sitio web",
     color: "text-sky-400",
     ring: "hover:border-sky-400/40 hover:bg-sky-400/10",
